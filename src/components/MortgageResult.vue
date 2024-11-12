@@ -1,8 +1,6 @@
 <script setup>
-import EqualPrincipalSummary from './mortgage/EqualPrincipalSummary.vue'
-import EqualPrincipalInterestSummary from './mortgage/EqualPrincipalInterestSummary.vue'
-import EqualPrincipalMonthly from './mortgage/EqualPrincipalMonthly.vue'
-import EqualPrincipalInterestMonthly from './mortgage/EqualPrincipalInterestMonthly.vue'
+import MortgageSummary from './mortgage/MortgageSummary.vue'
+import MortgageTable from './mortgage/MortgageTable.vue'
 
 defineProps({
   result: Object,
@@ -13,12 +11,12 @@ defineProps({
 <template>
   <div v-if="result" class="result">
     <div class="summary-comparison">
-      <EqualPrincipalInterestSummary :result="result" :totalAmount="totalAmount" />
-      <EqualPrincipalSummary :result="result" :totalAmount="totalAmount" />
+      <MortgageSummary :result="result" :totalAmount="totalAmount" type="equalPrincipalAndInterest" />
+      <MortgageSummary :result="result" :totalAmount="totalAmount" type="equalPrincipal" />
     </div>
     <div class="comparison-tables">
-      <EqualPrincipalInterestMonthly :result="result" />
-      <EqualPrincipalMonthly :result="result" />
+      <MortgageTable :result="result" type="equalPrincipalAndInterest" />
+      <MortgageTable :result="result" type="equalPrincipal" />
     </div>
   </div>
 </template>

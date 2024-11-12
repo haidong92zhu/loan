@@ -1,5 +1,29 @@
-# Vue 3 + TypeScript + Vite
+# Loan Calculator
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A practical tool to help you make informed decisions about your mortgage and loan planning.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Features
+
+- Monthly payment calculation
+- Total interest cost analysis
+- Loan amortization schedule
+- Compare different loan scenarios
+- Visual payment breakdown charts
+
+## Project Setup
+
+### 1. Install Dependencies
+
+npm install
+
+### 2. Start Development
+
+npm run dev
+
+### 3. Build for Production
+
+npm run build
+
+### 4. Preview Production Build
+
+npm run preview
