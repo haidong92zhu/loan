@@ -27,3 +27,8 @@ npm run build
 ### 4. Preview Production Build
 
 npm run preview
+
+### 5. github发布
+npm run build
+git subtree push --prefix dist origin publish
+从publish发布
