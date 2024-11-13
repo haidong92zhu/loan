@@ -64,41 +64,66 @@ const emit = defineEmits(['update:totalAmount', 'update:lprRate', 'update:bpRate
     </button>
   </div>
 </template>
+  <style scoped>
+  .mortgage-input {
+    width: 50%;
+    min-width: 280px;
+    max-width: 500px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
 
-<style scoped>
-.mortgage-input {
-  margin-bottom: 30px;
-}
+  .input-group {
+    margin-bottom: 16px;
+  }
 
-.input-group {
-  margin-bottom: 15px;
-}
+  .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+  }
 
-.input-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
+  .input-group input {
+    width: calc(100% - 24px);
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
 
-.input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
+  .input-group input:focus {
+    outline: none;
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.1);
+  }
 
-.button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 10px 0;
-  font-size: 16px;
-}
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+  }
 
-.button:hover {
-  background-color: #45a049;
-}
-</style>
+  button:hover {
+    background: #1976d2;
+  }
+
+  @media (max-width: 768px) {
+    .mortgage-input {
+      width: 90%;
+      min-width: auto;
+    }
+  }
+  </style>
