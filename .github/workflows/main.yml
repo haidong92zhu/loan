@@ -15,7 +15,7 @@ jobs:
       - name: install dependency
         run: npm install
       - name: build
-        run: npm build
+        run: npm run build
       - name: deploy serverless
         uses: woodyyan/tencent-serverless-action@main
         env: # 环境变量
