@@ -5,6 +5,7 @@ import { exportToExcel } from '../utils/MortgageOutput';
 import MortgageInput from './MortgageInput.vue';
 import MortgageResult from './MortgageResult.vue';
 import ExportModal from './ExportModal.vue';
+import CitySelector from './CitySelector.vue';
 
 const totalAmount = ref('')
 const lprRate = ref('')
@@ -13,6 +14,8 @@ const years = ref('')
 const result = ref(null)
 const showExportModal = ref(false)
 const printDialog = ref();
+
+const city = ref('');
 
 const calculate = () => {
   result.value = calculateMortgage(
@@ -34,26 +37,28 @@ const handleExport = (type) => {
 }
 
 </script>
-
 <template>
-  <div class="mortgage-app">
-    <header class="app-header">
-      <h1>房贷计算器</h1>
-    </header>
+  <div class="mortgage-calculator">
+    <div class="mortgage-app">
+      <header class="app-header">
+        <h1>房贷计算器</h1>
+      </header>
 
-    <div class="content">
-      <MortgageInput v-model:totalAmount="totalAmount" v-model:lprRate="lprRate" v-model:bpRate="bpRate"
-        v-model:years="years" @calculate="calculate" />
+      <div class="content">
+        <CitySelector v-model:city="city" v-model:lprRate="lprRate" v-model:bpRate="bpRate" />
+        <MortgageInput v-model:totalAmount="totalAmount" v-model:lprRate="lprRate" v-model:bpRate="bpRate"
+          v-model:years="years" @calculate="calculate" />
 
-      <div class="export-section" v-if="result">
-        <button class="export-button" @click="handleExportClick">
-          导出还款计划表
-        </button>
+        <div class="export-btn-container" v-if="result">
+          <button class="btn primary-btn" @click="showExportModal = true">
+            导出还款计划
+          </button>
+        </div>
+
+        <MortgageResult :result="result" :totalAmount="Number(totalAmount)" />
+
+        <ExportModal :show="showExportModal" @close="showExportModal = false" @export="handleExport" />
       </div>
-
-      <MortgageResult :result="result" :totalAmount="Number(totalAmount)" />
-
-      <ExportModal :show="showExportModal" @close="showExportModal = false" @export="handleExport" />
     </div>
   </div>
 </template>
@@ -93,24 +98,27 @@ const handleExport = (type) => {
   padding: 2rem;
 }
 
-.export-section {
-  margin: 1rem 0;
-  text-align: right;
-}
-
-.export-button {
-  background-color: #4caf50;
-  color: white;
+.btn {
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1rem;
   transition: background-color 0.3s;
+  color: white;
 }
 
-.export-button:hover {
-  background-color: #45a049;
+.primary-btn {
+  background-color: #1e88e5;
+}
+
+.primary-btn:hover {
+  background-color: #1565c0;
+}
+
+.export-btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
 @media (max-width: 768px) {

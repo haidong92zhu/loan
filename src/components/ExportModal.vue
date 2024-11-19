@@ -57,6 +57,8 @@ const handleExport = (type) => {
   border-radius: 8px;
   min-width: 300px;
   text-align: center;
+  margin: 0 1rem; /* 添加左右边距 */
+  max-width: 90%; /* 限制最大宽度 */
 }
 
 .export-options {
@@ -64,6 +66,37 @@ const handleExport = (type) => {
   gap: 1rem;
   justify-content: center;
   margin: 1.5rem 0;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 480px) {
+  .modal-content {
+    padding: 1.5rem;
+    min-width: auto;
+  }
+
+  .export-options {
+    flex-direction: column; /* 按钮垂直排列 */
+    gap: 0.8rem;
+  }
+
+  .export-option-btn {
+    width: 100%; /* 按钮占满宽度 */
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .close-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .export-option-btn {
