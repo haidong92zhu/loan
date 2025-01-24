@@ -4,13 +4,12 @@
     height="32"
     viewBox="0 0 32 32"
 >
-    <!-- 房子 -->
-    <polygon points="16,4 8,12 8,28 24,28 24,12" fill="#4CAF50" />
-    <polygon points="16,4 24,12 16,12" fill="#388E3C" />
-
-    <!-- 人民币符号 -->
-    <text x="10" y="20" font-family="Arial" font-size="8" fill="#388E3C" font-weight="bold">¥</text>
-
-    <!-- 文字 "Loan" -->
-    <text x="16" y="24" font-family="Arial" font-size="6" fill="#388E3C" font-weight="bold" text-anchor="middle">Loan</text>
+    <!-- 书本形状 -->
+    <path d="M6,8 L26,8 L26,24 L6,24 C6,24 8,24 8,22 L8,10 C8,8 6,8 6,8 Z" fill="#E53935"/>
+    <path d="M8,10 L24,10 L24,22 L8,22" fill="#fff" stroke="#C62828" stroke-width="1"/>
+    
+    <!-- 书页纹理 -->
+    <line x1="12" y1="13" x2="20" y2="13" stroke="#C62828" stroke-width="1"/>
+    <line x1="12" y1="16" x2="20" y2="16" stroke="#C62828" stroke-width="1"/>
+    <line x1="12" y1="19" x2="20" y2="19" stroke="#C62828" stroke-width="1"/>
 </svg>

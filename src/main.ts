@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import Mortgage from './components/Mortgage.vue'
+import App from './components/App.vue'
 
-
-createApp(Mortgage).mount('#app')
+createApp(App).mount('#app')
